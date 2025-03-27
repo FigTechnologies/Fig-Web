@@ -8,8 +8,8 @@ import MyTypewriter from "../MyTypewriter"
 
 const Hero = () => {
 	return (
-		<div className="w-full  md:pb-0 hero-bg">
-			<div className="md:grid  relative  lg:pb-0 pt-[100px] md:pt-[120px] grid-cols-1 md:grid-cols-2 w-full md:w-full md:max-w-7xl min-h-screen lg:grid-cols-12 mx-auto">
+		<div className="w-full md:pb-0 hero-bg">
+			<div className="md:grid relative px-4 lg:pb-0 pt-[100px] md:pt-[120px] grid-cols-1 md:grid-cols-2 w-full md:w-full md:max-w-7xl md:min-h-screen lg:grid-cols-12 mx-auto">
 				<div className="mx-auto md:pt-[40px] lg:pb-[40px] md:text-center lg:text-start md:w-9/12 md:mx-auto lg:w-full lg:mx-0 md:col-span-2 lg:flex flex-col lg:justify-center lg:col-span-7">
 					<h4 className="heading-4   text-primary-color mb-2 ">Trusted By 100+ Creators</h4>
 					<h1 className={`heading-1`}>
@@ -30,7 +30,7 @@ const Hero = () => {
 					</div>
 				</div>
 
-				<div className="h-[60vh] lg:h-full w-full lg:w-full md:mx-auto md:mt-5 lg:mt-0 md:col-span-2 lg:col-span-5 absolute top-0 right-0">
+				<div className="h-[60vh] hidden lg:block lg:h-full w-full lg:w-full md:mx-auto md:mt-5 lg:mt-0 md:col-span-2 lg:col-span-5 absolute top-0 right-0">
 					<div className="h-full w-full relative ">
 						<Image
 							src="/images/big-hero.gif"
