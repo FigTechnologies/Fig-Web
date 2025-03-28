@@ -22,54 +22,14 @@ const Choose = () => {
 		e.stopPropagation()
 	}
 
-	// const animatedSection = document.querySelector(".what-we-do")
-	const scrollOverlay = document.querySelector(".what-we-do")
-
 	useGSAP(() => {
 		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: containerRef.current,
-				start: `top center`,
-				end: `bottom center`,
-				scrub: 0.5,
-				markers: true,
-				toggleActions: `play none none reverse`,
-				pin: true,
-				pinSpacing: true,
-				onEnter: () => {
-					// Lock scroll when animation starts
-					scrollOverlay.style.display = "block"
-					document.body.style.overflow = "hidden"
-					document.addEventListener("wheel", preventScroll, { passive: false })
-					document.addEventListener("touchmove", preventScroll, { passive: false })
-				},
-				onLeave: () => {
-					// Unlock scroll when animation ends
-					scrollOverlay.style.display = "none"
-					document.body.style.overflow = "auto"
-					document.removeEventListener("wheel", preventScroll)
-					document.removeEventListener("touchmove", preventScroll)
-				},
-				onEnterBack: () => {
-					// Same lock when scrolling back
-					scrollOverlay.style.display = "block"
-					document.body.style.overflow = "hidden"
-					document.addEventListener("wheel", preventScroll, { passive: false })
-					document.addEventListener("touchmove", preventScroll, { passive: false })
-				},
-				onLeaveBack: () => {
-					// Unlock when scrolling back out
-					scrollOverlay.style.display = "none"
-					document.body.style.overflow = "auto"
-					document.removeEventListener("wheel", preventScroll)
-					document.removeEventListener("touchmove", preventScroll)
-				},
-			},
+			scrollTrigger: { trigger: `.what-we-do`, start: `center top`, end: `+=800px center`, scrub: 1, markers: true, toggleActions: `play none none reverse`, pin: true, pinSpacing: true },
 		})
 
 		tl
 			.to(box2Ref.current, {
-				y: `-80%`,
+				y: `-90%`,
 			})
 			.to(box3Ref.current, {
 				y: `-180%`,
@@ -99,7 +59,7 @@ const Choose = () => {
 					ref={containerRef}>
 					<div
 						ref={box1Ref}
-						className="w-full gap-[20px] box bg-primary-color rounded-lg choose-bg relative h-80 flex justify-center items-center p-12 mb-4">
+						className="w-full gap-[20px] box bg-[#2295f2] rounded-lg choose-bg relative h-80 flex justify-center items-center p-12 mb-4">
 						<div className="flex-1 ">
 							<h4 className="heading-1 lg:mb-1 !text-white">Instant Funding </h4>
 							<p className="text-[1.5rem] leading-[2] text-white">No paperwork. Just fast, easy access to the funds you need without the wait.</p>
@@ -107,7 +67,7 @@ const Choose = () => {
 					</div>
 					<div
 						ref={box2Ref}
-						className="w-full gap-[20px] box bg-primary-color rounded-lg choose-bg relative h-80 flex justify-center items-center p-12 mb-4">
+						className="w-full gap-[20px] box bg-[#39c277] rounded-lg choose-bg relative h-80 flex justify-center items-center p-12 mb-4">
 						<div className="flex-1">
 							<h4 className="heading-1 lg:mb-1 !text-white">Focus On The Art</h4>
 							<p className="text-[1.5rem] leading-[2] text-white">Get creative. Create your best work. And leave the financial stress to us.</p>
@@ -115,7 +75,7 @@ const Choose = () => {
 					</div>
 					<div
 						ref={box3Ref}
-						className="w-full gap-[20px] box bg-primary-color rounded-lg choose-bg relative h-80 flex justify-center items-center p-12">
+						className="w-full gap-[20px] box bg-[#0c1825] rounded-lg choose-bg relative h-80 flex justify-center items-center p-12">
 						<div className="flex-1 ">
 							<h4 className="heading-1 lg:mb-1 !text-white">Flexible Repayment </h4>
 							<p className="text-[1.5rem] leading-[2] text-white">Take your time. Create. Deliver. When your funds start rolling in, pay us back on your terms</p>
