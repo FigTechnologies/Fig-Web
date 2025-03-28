@@ -85,20 +85,20 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<div className=" w-full mt-[30px] md:mt-[20px] h-[20vh] md:h-[30vh] lg:h-[40vh] ">
-				<div className="relative w-full h-full">
+			<div className=" w-full mt-[10px] md:mt-[5px] h-[20vh] md:h-[30vh] lg:h-[40vh] ">
+				<div className="relative w-full h-full overflow-hidden">
 					<Image
-						src="/images/fig-footer.png"
+						src="/images/fig-footer.svg"
 						alt="fig finance"
 						fill
-						className="hidden md:object-contain md:block"
+						className="object-cover scale-125 block"
 					/>
-					<Image
+					{/* <Image
 						src="/images/fig-footer-mobile.png"
 						alt="fig finance"
 						fill
 						className="md:object-contain md:hidden"
-					/>
+					/> */}
 				</div>
 			</div>
 		</footer>

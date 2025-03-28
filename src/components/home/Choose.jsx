@@ -24,7 +24,7 @@ const Choose = () => {
 
 	useGSAP(() => {
 		const tl = gsap.timeline({
-			scrollTrigger: { trigger: `.what-we-do`, start: `center top`, end: `+=800px center`, scrub: 1, markers: true, toggleActions: `play none none reverse`, pin: true, pinSpacing: true },
+			scrollTrigger: { trigger: `.what-we-do`, start: `center top`, end: `+=800px center`, scrub: 1, toggleActions: `play none none reverse`, pin: true, pinSpacing: true },
 		})
 
 		tl
