@@ -18,20 +18,18 @@ const Choose = () => {
 
 	useGSAP(() => {
 		const tl = gsap.timeline({
-			scrollTrigger: containerRef.current,
-			start: `50% 50%`,
-			markers: true,
-			scrub: true,
+			scrollTrigger: { trigger: containerRef.current, start: `top center`, end: `bottom center`, scrub: 0.5, markers: true, toggleActions: `play none none reverse`, pin: true, pinSpacing: true },
 		})
 
 		tl
 			.to(box2Ref.current, {
 				y: `-80%`,
-				scale: 0.98,
 			})
 			.to(box3Ref.current, {
-				y: `-190%`,
-				scale: 0.94,
+				y: `-180%`,
+			})
+			.to(containerRef.current, {
+				height: `400px`,
 			})
 		// gsap.utils.toArray(`.box`).forEach((box, idx) => {
 		// 	ScrollTrigger.create({
@@ -45,14 +43,14 @@ const Choose = () => {
 	}, [])
 
 	return (
-		<section
-			className="relative"
-			ref={containerRef}>
-			<div className="w-full max-w-7xl mx-auto flex lg:justify-center py-[50px] flex-col gap-[20px] md:gap-[0px] ">
+		<section className="relative">
+			<div className="w-full px-4 max-w-7xl mx-auto flex lg:justify-center py-[50px] flex-col gap-[20px] md:gap-[0px] ">
 				<div className="flex items-center justify-start w-full mx-auto">
 					<h2 className="text-black heading-2">Why Choose Us</h2>
 				</div>
-				<div className="relative w-full mx-auto trigger">
+				<div
+					className="relative w-full mx-auto trigger"
+					ref={containerRef}>
 					<div
 						ref={box1Ref}
 						className="w-full gap-[20px] box bg-primary-color rounded-lg choose-bg relative h-80 flex justify-center items-center p-12 mb-4">
