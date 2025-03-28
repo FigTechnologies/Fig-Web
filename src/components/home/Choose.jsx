@@ -16,9 +16,55 @@ const Choose = () => {
 	const box2Ref = useRef(null)
 	const box3Ref = useRef(null)
 
+	// Prevent default scroll
+	function preventScroll(e) {
+		e.preventDefault()
+		e.stopPropagation()
+	}
+
+	// const animatedSection = document.querySelector(".what-we-do")
+	const scrollOverlay = document.querySelector(".what-we-do")
+
 	useGSAP(() => {
 		const tl = gsap.timeline({
-			scrollTrigger: { trigger: containerRef.current, start: `top center`, end: `bottom center`, scrub: 0.5, markers: true, toggleActions: `play none none reverse`, pin: true, pinSpacing: true },
+			scrollTrigger: {
+				trigger: containerRef.current,
+				start: `top center`,
+				end: `bottom center`,
+				scrub: 0.5,
+				markers: true,
+				toggleActions: `play none none reverse`,
+				pin: true,
+				pinSpacing: true,
+				onEnter: () => {
+					// Lock scroll when animation starts
+					scrollOverlay.style.display = "block"
+					document.body.style.overflow = "hidden"
+					document.addEventListener("wheel", preventScroll, { passive: false })
+					document.addEventListener("touchmove", preventScroll, { passive: false })
+				},
+				onLeave: () => {
+					// Unlock scroll when animation ends
+					scrollOverlay.style.display = "none"
+					document.body.style.overflow = "auto"
+					document.removeEventListener("wheel", preventScroll)
+					document.removeEventListener("touchmove", preventScroll)
+				},
+				onEnterBack: () => {
+					// Same lock when scrolling back
+					scrollOverlay.style.display = "block"
+					document.body.style.overflow = "hidden"
+					document.addEventListener("wheel", preventScroll, { passive: false })
+					document.addEventListener("touchmove", preventScroll, { passive: false })
+				},
+				onLeaveBack: () => {
+					// Unlock when scrolling back out
+					scrollOverlay.style.display = "none"
+					document.body.style.overflow = "auto"
+					document.removeEventListener("wheel", preventScroll)
+					document.removeEventListener("touchmove", preventScroll)
+				},
+			},
 		})
 
 		tl
@@ -43,7 +89,7 @@ const Choose = () => {
 	}, [])
 
 	return (
-		<section className="relative">
+		<section className="relative choose">
 			<div className="w-full px-4 max-w-7xl mx-auto flex lg:justify-center py-[50px] flex-col gap-[20px] md:gap-[0px] ">
 				<div className="flex items-center justify-start w-full mx-auto">
 					<h2 className="text-black heading-2">Why Choose Us</h2>

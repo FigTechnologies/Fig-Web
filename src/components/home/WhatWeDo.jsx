@@ -29,7 +29,7 @@ const variants = {
 
 const WhatWeDo = () => {
 	return (
-		<section className="w-full section">
+		<section className="w-full section what-we-do">
 			<div className=" lg:max-w-7xl lg:w-full w-11/12 lg:py-20  py-[0px] mx-auto ">
 				<div className=" h-full lg:flex items-center ">
 					<div className="py-[50px] lg:py-0 w-full">
