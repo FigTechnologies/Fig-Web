@@ -1,11 +1,9 @@
 "use client"
 
 import { useGSAP } from "@gsap/react"
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 import { gsap } from "gsap/dist/gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import { ThumbsUp } from "lucide-react"
-import Image from "next/image"
 import { useRef } from "react"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
@@ -16,15 +14,9 @@ const Choose = () => {
 	const box2Ref = useRef(null)
 	const box3Ref = useRef(null)
 
-	// Prevent default scroll
-	function preventScroll(e) {
-		e.preventDefault()
-		e.stopPropagation()
-	}
-
 	useGSAP(() => {
 		const tl = gsap.timeline({
-			scrollTrigger: { trigger: `.what-we-do`, start: `center top`, end: `+=800px center`, scrub: 1, toggleActions: `play none none reverse`, pin: true, pinSpacing: true },
+			scrollTrigger: { trigger: `.what-we-do`, start: `40% top`, end: `+=500px bottom`, scrub: 1, toggleActions: `play none none reverse`, pin: true, pinSpacing: false },
 		})
 
 		tl
@@ -35,7 +27,7 @@ const Choose = () => {
 				y: `-180%`,
 			})
 			.to(containerRef.current, {
-				height: `400px`,
+				height: `500px`,
 			})
 		// gsap.utils.toArray(`.box`).forEach((box, idx) => {
 		// 	ScrollTrigger.create({
