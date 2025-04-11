@@ -45,7 +45,7 @@ const Navbar = () => {
 
 	return (
 		<nav className={`${isScrolled ? "bg-primary-color" : "bg-transparent"} sticky top-0  h-[70px]  lg:h-auto lg:py-[5px]   transition-all duration-300 `}>
-			<div className={`flex justify-between mx-auto w-full px-8 h-full relative items-center ${isScrolled ? " text-white" : "text-primary-color"}`}>
+			<div className={`flex justify-between max-w-7xl w-full px-4 mx-auto h-full relative items-center ${isScrolled ? " text-white" : "text-primary-color"}`}>
 				<AnimatePresence mode="wait">
 					{isScrolled ? (
 						<motion.div

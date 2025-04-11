@@ -5,10 +5,10 @@ import { FaXTwitter } from "react-icons/fa6"
 const Footer = () => {
 	return (
 		<footer className="w-full md:pt-[100px] bg-primary-color pt-[40px]  ">
-			<div className=" h-full  md:flex flex-col gap-[50px]  w-11/12 mx-auto">
+			<div className="h-full md:flex flex-col gap-[50px] w-full max-w-7xl px-4 mx-auto">
 				<div className="md:flex mb-[20px] md:gap-[40px] md:justify-between ">
-					<div className="w-9/12 md:w-[35%]   mb-[30px]">
-						<div className="relative w-[150px] h-[50px] object-contain">
+					<div className="w-9/12 md:w-[35%]  mb-[30px]">
+						<div className="relative w-[250px] h-[100px] object-contain">
 							<Image
 								src="/images/logo-white-2.png"
 								alt="logo for footer"

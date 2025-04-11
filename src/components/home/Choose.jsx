@@ -15,20 +15,76 @@ const Choose = () => {
 	const box3Ref = useRef(null)
 
 	useGSAP(() => {
+		// const boxes = gsap.utils.toArray(".choose .box")
+
 		const tl = gsap.timeline({
-			scrollTrigger: { trigger: `.what-we-do`, start: `40% top`, end: `+=500px bottom`, scrub: 1, toggleActions: `play none none reverse`, pin: true, pinSpacing: false },
+			scrollTrigger: {
+				trigger: `.choose`,
+				start: `0% 0%`,
+				end: `100% bottom`,
+				scrub: 1.5,
+				toggleActions: `play none none reverse`,
+				pin: true,
+				pinSpacing: false,
+			},
 		})
+
+		// gsap.set(boxes, { top: 16 })
+
+		// boxes.forEach((text, i) => {
+		// 	const previous = boxes[i - 1]
+		// 	if (previous) {
+		// 		tl
+		// 			.to(
+		// 				text,
+		// 				{
+		// 					top: 32,
+		// 					autoAlpha: 1,
+		// 				},
+		// 				"+=0.5",
+		// 			)
+		// 			.to(
+		// 				previous,
+		// 				{
+		// 					top: 16,
+		// 					autoAlpha: 0,
+		// 				},
+		// 				"<",
+		// 			)
+		// 	} else {
+		// 		tl.to(
+		// 			text,
+		// 			{
+		// 				top: 16,
+		// 				autoAlpha: 1,
+		// 			},
+		// 			"+=0.5",
+		// 		)
+		// 	}
+		// })
+		// // Final Text
+		// tl.to(
+		// 	boxes[boxes.length - 1],
+		// 	{
+		// 		y: 100,
+		// 		autoAlpha: 0,
+		// 	},
+		// 	"+=0.5",
+		// )
 
 		tl
 			.to(box2Ref.current, {
-				y: `-90%`,
+				top: `32px`,
 			})
 			.to(box3Ref.current, {
-				y: `-180%`,
+				top: `64px`,
 			})
 			.to(containerRef.current, {
 				height: `500px`,
 			})
+		// .to(`.choose`, {
+		// 	position: `relative`,
+		// })
 		// gsap.utils.toArray(`.box`).forEach((box, idx) => {
 		// 	ScrollTrigger.create({
 		// 		trigger: box,
@@ -41,17 +97,17 @@ const Choose = () => {
 	}, [])
 
 	return (
-		<section className="relative choose">
+		<section className="choose relative pt-8">
 			<div className="w-full px-4 max-w-7xl mx-auto flex lg:justify-center py-[50px] flex-col gap-[20px] md:gap-[0px] ">
 				<div className="flex items-center justify-start w-full mx-auto">
 					<h2 className="text-black heading-2">Why Choose Us</h2>
 				</div>
 				<div
-					className="relative w-full mx-auto trigger"
+					className="relative w-full mx-auto trigger h-[1250px]"
 					ref={containerRef}>
 					<div
 						ref={box1Ref}
-						className="w-full gap-[20px] box bg-[#2295f2] rounded-lg choose-bg relative h-80 flex justify-center items-center p-12 mb-4">
+						className="w-full gap-[20px] box bg-[#2295f2] rounded-lg choose-bg absolute top-4 h-96 flex justify-center items-center p-12 mb-4 box">
 						<div className="flex-1 ">
 							<h4 className="heading-1 lg:mb-1 !text-white">Instant Funding </h4>
 							<p className="text-[1.5rem] leading-[2] text-white">No paperwork. Just fast, easy access to the funds you need without the wait.</p>
@@ -59,7 +115,7 @@ const Choose = () => {
 					</div>
 					<div
 						ref={box2Ref}
-						className="w-full gap-[20px] box bg-[#39c277] rounded-lg choose-bg relative h-80 flex justify-center items-center p-12 mb-4">
+						className="w-full gap-[20px] box bg-[#39c277] rounded-lg choose-bg absolute top-[416px] h-96 flex justify-center items-center p-12 mb-4 box">
 						<div className="flex-1">
 							<h4 className="heading-1 lg:mb-1 !text-white">Focus On The Art</h4>
 							<p className="text-[1.5rem] leading-[2] text-white">Get creative. Create your best work. And leave the financial stress to us.</p>
@@ -67,7 +123,7 @@ const Choose = () => {
 					</div>
 					<div
 						ref={box3Ref}
-						className="w-full gap-[20px] box bg-[#0c1825] rounded-lg choose-bg relative h-80 flex justify-center items-center p-12">
+						className="w-full gap-[20px] box bg-[#0c1825] rounded-lg choose-bg absolute top-[816px] h-96 flex justify-center items-center p-12 box">
 						<div className="flex-1 ">
 							<h4 className="heading-1 lg:mb-1 !text-white">Flexible Repayment </h4>
 							<p className="text-[1.5rem] leading-[2] text-white">Take your time. Create. Deliver. When your funds start rolling in, pay us back on your terms</p>

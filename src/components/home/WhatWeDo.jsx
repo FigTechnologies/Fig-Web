@@ -30,7 +30,7 @@ const variants = {
 const WhatWeDo = () => {
 	return (
 		<section className="w-full section what-we-do">
-			<div className=" lg:max-w-7xl lg:w-full w-11/12 lg:py-20  py-[0px] mx-auto ">
+			<div className="max-w-7xl w-full px-4 md:py-20 py-[0px] mx-auto">
 				<div className=" h-full lg:flex items-center ">
 					<div className="py-[50px] lg:py-0 w-full">
 						<h2 className="heading-2 text-start text-primary-black mb-12">What We Do</h2>
