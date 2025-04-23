@@ -27,6 +27,7 @@ const Navbar = () => {
 				setSHowDropdown(false)
 			}
 		}
+
 		document.addEventListener("mousedown", handleClickOutside)
 
 		return () => {
@@ -34,7 +35,6 @@ const Navbar = () => {
 		}
 	}, [])
 
-	// change state if the page is scrolled
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll)
 
@@ -44,7 +44,7 @@ const Navbar = () => {
 	}, [isScrolled])
 
 	return (
-		<nav className={`${isScrolled ? "bg-primary-color" : "bg-transparent"} sticky top-0  h-[70px]  lg:h-auto lg:py-[5px]   transition-all duration-300 `}>
+		<nav className={`${isScrolled ? "bg-primary-color" : "bg-white border-b-2"} sticky top-0  h-[70px]  lg:h-auto lg:py-[5px]   transition-all duration-300 `}>
 			<div className={`flex justify-between max-w-7xl w-full px-4 mx-auto h-full relative items-center ${isScrolled ? " text-white" : "text-primary-color"}`}>
 				<AnimatePresence mode="wait">
 					{isScrolled ? (
@@ -80,22 +80,24 @@ const Navbar = () => {
 					)}
 				</AnimatePresence>
 
-				<div className={`lg:flex gap-[20px] hidden  text-[15px] font-[600] ${dm_sans.className} `}>
-					<Link href="#">Products</Link>
-					<Link href="#">Use Cases</Link>
-					<Link href="#">Developers</Link>
-					<Link href="#">Company</Link>
-				</div>
-				<div className="hidden lg:block">
-					<button className={`text-[15px] font-[700] ${isScrolled ? "btn" : "btn-colored"}`}>Contact Sales</button>
-				</div>
+				<div className="flex justify-between items-center gap-8">
+					<div className={`lg:flex gap-[20px] hidden  text-[15px] font-[600] ${dm_sans.className} `}>
+						<Link href="#">Products</Link>
+						<Link href="#">Use Cases</Link>
+						<Link href="#">Developers</Link>
+						<Link href="#">Company</Link>
+					</div>
+					<div className="hidden lg:block">
+						<button className={`text-[15px] font-[700] ${isScrolled ? "btn" : "btn-colored"}`}>Contact Sales</button>
+					</div>
 
-				{/* hamburger menu for mobile  */}
-				<div
-					ref={ref}
-					className="lg:hidden "
-					onClick={toggleDropdown}>
-					{showDropdown ? <X /> : <Menu />}
+					{/* hamburger menu for mobile  */}
+					<div
+						ref={ref}
+						className="lg:hidden "
+						onClick={toggleDropdown}>
+						{showDropdown ? <X /> : <Menu />}
+					</div>
 				</div>
 				{/* {showDropdown && (
           <div className="lg:hidden absolute top-[70px] w-full h-[300px] z-[999] bg-dark-gray ">
