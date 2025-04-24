@@ -55,12 +55,14 @@ const Navbar = () => {
 							exit={{ opacity: 0, y: 30 }}
 							transition={{ duration: 0.2, ease: "easeInOut" }}
 							className="h-[70px] w-[170px]  relative">
-							<Image
-								src="/images/logo-white-2.png"
-								alt="fig finance logo"
-								fill
-								className="object-contain"
-							/>
+							<Link href="/">
+								<Image
+									src="/images/logo-white-2.png"
+									alt="fig finance logo"
+									fill
+									className="object-contain"
+								/>
+							</Link>
 						</motion.div>
 					) : (
 						<motion.div
@@ -70,12 +72,14 @@ const Navbar = () => {
 							exit={{ opacity: 0, y: -50 }}
 							transition={{ duration: 0.2, ease: "easeInOut" }}
 							className="h-[70px] w-[170px] relative">
-							<Image
-								src="/images/logo.png"
-								alt="fig finance logo"
-								fill
-								className="object-contain"
-							/>
+							<Link href="/">
+								<Image
+									src="/images/logo.png"
+									alt="fig finance logo"
+									fill
+									className="object-contain"
+								/>
+							</Link>
 						</motion.div>
 					)}
 				</AnimatePresence>

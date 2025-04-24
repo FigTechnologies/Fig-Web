@@ -91,7 +91,7 @@ const Footer = () => {
 						src="/images/fig-footer.svg"
 						alt="fig finance"
 						fill
-						className="object-cover scale-125 block"
+						className="object-cover block"
 					/>
 					{/* <Image
 						src="/images/fig-footer-mobile.png"

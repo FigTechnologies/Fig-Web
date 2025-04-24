@@ -30,7 +30,7 @@ button {
 	@apply border-2 px-[24px] py-[11px] rounded-[6px] text-center bg-primary-color border-primary-color  text-[#F1F2F8] text-[16px] font-[600]  duration-500 transition transform active:scale-95 focus:outline-none;
 }
 .btn-colored {
-	@apply border-2 px-[24px] py-[11px] md:py-[14px] rounded-[6px] text-center bg-primary-color border-primary-color  text-[#F1F2F8] text-[16px] md:text-[16px] font-[700]  duration-500 transition transform active:scale-95 focus:outline-none tracking-[0.5px];
+	@apply border-2 px-[24px] py-[11px] md:py-[14px] !rounded-[2rem] tracking-widest text-center bg-primary-color border-primary-color  text-[#F1F2F8] text-[16px] md:text-[16px] font-[700]  duration-500 transition transform active:scale-95 focus:outline-none;
 }
 .btn {
 	@apply px-[24px] py-[11px] rounded-[10px] text-center bg-white   text-primary-color  text-[16px] font-[700]   duration-500 transition transform active:scale-95 focus:outline-none border border-primary-color tracking-[0.5px];

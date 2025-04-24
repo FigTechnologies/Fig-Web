@@ -25,8 +25,7 @@ const Hero = () => {
 						</span>
 					</span>
 					<div className="md:flex gap-[20px] md:my-5   lg:mt-[10px] md:justify-center lg:justify-start   ">
-						<button className={`btn-colored !rounded-[2rem] ${dm_sans.className}`}> Apply For Funding</button>
-						<button className={`btn-colored !rounded-[2rem] ${dm_sans.className}`}> Watch Video</button>
+						<button className={`btn-colored ${dm_sans.className}`}> Apply For Funding</button>
 					</div>
 				</div>
 
