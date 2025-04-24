@@ -82,7 +82,7 @@ const Navbar = () => {
 
 				<div className="flex justify-between items-center gap-8">
 					<div className={`lg:flex gap-[20px] hidden  text-[15px] font-[600] ${dm_sans.className} `}>
-						<Link href="#">Products</Link>
+						<Link href="/products">Products</Link>
 						<Link href="#">Use Cases</Link>
 						<Link href="#">Developers</Link>
 						<Link href="#">Company</Link>
