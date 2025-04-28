@@ -10,6 +10,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const Choose = () => {
 	const containerRef = useRef(null)
+	const chooseRef = useRef(null)
 	const box1Ref = useRef(null)
 	const box2Ref = useRef(null)
 	const box3Ref = useRef(null)
@@ -30,7 +31,6 @@ const Choose = () => {
 		})
 
 		// gsap.set(boxes, { top: 16 })
-
 		// boxes.forEach((text, i) => {
 		// 	const previous = boxes[i - 1]
 		// 	if (previous) {
@@ -71,16 +71,17 @@ const Choose = () => {
 		// 	},
 		// 	"+=0.5",
 		// )
-
 		tl
 			.to(box2Ref.current, {
-				top: `32px`,
+				marginTop: `-24rem`,
+				// top: `32px`,
 			})
 			.to(box3Ref.current, {
-				top: `64px`,
+				// top: `64px`,
+				marginTop: `-24rem`,
 			})
-			.to(containerRef.current, {
-				height: `500px`,
+			.to(document.querySelector(`.works`), {
+				marginTop: `-24rem`,
 			})
 		// .to(`.choose`, {
 		// 	position: `relative`,
@@ -97,7 +98,9 @@ const Choose = () => {
 	}, [])
 
 	return (
-		<section className="choose relative pt-8">
+		<section
+			className="choose relative pt-8"
+			ref={chooseRef}>
 			<div className="w-full px-4 max-w-7xl mx-auto flex lg:justify-center py-[50px] flex-col gap-[20px] md:gap-[0px] ">
 				<div className="flex items-center justify-start w-full mx-auto">
 					<h2 className="text-black heading-2">Why Choose Us</h2>
@@ -107,7 +110,7 @@ const Choose = () => {
 					ref={containerRef}>
 					<div
 						ref={box1Ref}
-						className="w-full gap-[20px] box bg-[#2295f2] rounded-lg choose-bg absolute top-4 h-96 flex justify-center items-center p-12 mb-4 box">
+						className="w-full gap-[20px] box bg-[#2295f2] rounded-lg funding-bg relative mt-4 h-96 flex justify-center items-center p-12 mb-4 box">
 						<div className="flex-1 ">
 							<h4 className="heading-1 lg:mb-1 !text-white">Instant Funding </h4>
 							<p className="text-[1.5rem] leading-[2] text-white">No paperwork. Just fast, easy access to the funds you need without the wait.</p>
@@ -115,7 +118,7 @@ const Choose = () => {
 					</div>
 					<div
 						ref={box2Ref}
-						className="w-full gap-[20px] box bg-[#39c277] rounded-lg choose-bg absolute top-[416px] h-96 flex justify-center items-center p-12 mb-4 box">
+						className="w-full gap-[20px] box bg-[#39c277] rounded-lg art-bg relative mt-4 h-96 flex justify-center items-center p-12 mb-4 box">
 						<div className="flex-1">
 							<h4 className="heading-1 lg:mb-1 !text-white">Focus On The Art</h4>
 							<p className="text-[1.5rem] leading-[2] text-white">Get creative. Create your best work. And leave the financial stress to us.</p>
@@ -123,9 +126,9 @@ const Choose = () => {
 					</div>
 					<div
 						ref={box3Ref}
-						className="w-full gap-[20px] box bg-[#0c1825] rounded-lg choose-bg absolute top-[816px] h-96 flex justify-center items-center p-12 box">
-						<div className="flex-1 ">
-							<h4 className="heading-1 lg:mb-1 !text-white">Flexible Repayment </h4>
+						className="w-full gap-[20px] box bg-[#0c1825] rounded-lg flexible-bg  relative mt-4 h-96 flex items-center p-12 box">
+						<div className="w-2/3">
+							<h4 className="heading-1 mb-4 !text-white">Flexible Repayment </h4>
 							<p className="text-[1.5rem] leading-[2] text-white">Take your time. Create. Deliver. When your funds start rolling in, pay us back on your terms</p>
 						</div>
 					</div>

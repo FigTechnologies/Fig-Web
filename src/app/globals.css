@@ -88,6 +88,27 @@ button {
 		background-position: top right;
 		background-repeat: no-repeat;
 	}
+
+	.flexible-bg {
+		background-image: url("/images/flexible-repayment.png");
+		background-size: 25%;
+		background-position: center right;
+		background-repeat: no-repeat;
+	}
+
+	.art-bg {
+		background-image: url("/images/art.png");
+		background-size: 25%;
+		background-position: center right;
+		background-repeat: no-repeat;
+	}
+
+	.funding-bg {
+		background-image: url("/images/opportunity.png");
+		background-size: 25%;
+		background-position: center right;
+		background-repeat: no-repeat;
+	}
 }
 
 @layer base {

@@ -27,7 +27,7 @@ export const variants = {
 
 const Works = () => {
 	return (
-		<section className="w-full relative py-20  md:py-12 max-w-7xl mx-auto overflow-hidden">
+		<section className="w-full relative py-20 md:py-12 max-w-7xl mx-auto overflow-hidden works">
 			<h2 className={`heading-2 text-primary-black text-start md:text-center lg:text-start mx-auto`}>How It Works</h2>
 
 			<div className="w-full lg:min-h-[100vh] mx-auto md:grid gap-[40px] items-center grid-cols-2">
