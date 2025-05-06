@@ -84,10 +84,19 @@ const Navbar = () => {
 					)}
 				</AnimatePresence>
 
-				<div className="flex justify-between items-center gap-8">
+				<div className="flex items-center justify-between gap-8">
 					<div className={`lg:flex gap-[20px] hidden  text-[15px] font-[600] ${dm_sans.className} `}>
-						<Link href="/products">Products</Link>
-						<Link href="#">Use Cases</Link>
+						<Link
+							href="#"
+							className="dropdown">
+							Products
+							<ul className="dropdown-menu">
+								<li>
+									<Link href="/products/early-pay">Early Pay</Link>
+								</li>
+							</ul>
+						</Link>
+						{/* <Link href="#">Use Cases</Link> */}
 						<Link href="#">Developers</Link>
 						<Link href="#">Company</Link>
 					</div>
@@ -105,7 +114,7 @@ const Navbar = () => {
 				</div>
 				{/* {showDropdown && (
           <div className="lg:hidden absolute top-[70px] w-full h-[300px] z-[999] bg-dark-gray ">
-            <ul className=" space-y-3 text-black">
+            <ul className="space-y-3 text-black ">
               <li className="">
                 <Link href="#" className="w-full h-full">
                   About

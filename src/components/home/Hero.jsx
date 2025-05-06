@@ -8,23 +8,23 @@ import MyTypewriter from "../MyTypewriter"
 const Hero = () => {
 	return (
 		<div className="w-full md:pb-0 hero-bg">
-			<div className="md:grid relative px-4 lg:pb-0 grid-cols-1 md:grid-cols-2 w-full md:w-full md:max-w-7xl md:min-h-screen lg:grid-cols-12 mx-auto">
+			<div className="relative w-full grid-cols-1 px-4 mx-auto md:grid lg:pb-0 md:grid-cols-2 md:w-full md:max-w-7xl md:min-h-screen lg:grid-cols-12">
 				<div className="mx-auto md:pt-[40px] pr-8 lg:pb-[40px] md:text-center lg:text-start md:w-9/12 md:mx-auto lg:w-full lg:mx-0 md:col-span-2 lg:flex flex-col lg:justify-center lg:col-span-6">
-					<h4 className="heading-4   text-primary-color mb-2 ">Trusted By 100+ Creators</h4>
+					{/* <h4 className="mb-2 heading-4 text-primary-color ">Trusted By 100+ Creators</h4> */}
 					<h1 className={`heading-1`}>
-						Financing for <span className="italic text-primary-color"> Creators</span> And <span className="italic text-primary-color">Influencers </span> in Africa
+						<span className="italic text-primary-color">AI-powered financing,</span> integrated directly into your platform.
 					</h1>
-					<span className="text-[25px] font-[400] lg:flex hidden md:mt-3 text-primary-black ">
-						Powering the dreams of {"    "}
-						<MySwiper />
+					<span className="text-[25px] font-[400] lg:flex hidden my-8 text-primary-black">
+						Our embedded finance solutions can be live on your platform in less than a week
+						{/* <MySwiper /> */}
 					</span>
-					<span className="text-base md:h-[30px] font-[400] text-primary-black block my-8 lg:hidden  ">
+					{/* <span className="text-base md:h-[30px] font-[400] text-primary-black block my-8 lg:hidden  ">
 						Powering the dreams of {"    "}{" "}
 						<span className="text-[#050914] font-[700]">
 							<MyTypewriter />
 						</span>
-					</span>
-					<div className="md:flex gap-[20px] md:my-5   lg:mt-[10px] md:justify-center lg:justify-start   ">
+					</span> */}
+					<div className="md:flex gap-[20px] md:my-5 lg:mt-[10px] md:justify-center lg:justify-start   ">
 						<button className={`btn-colored ${dm_sans.className}`}> Apply For Funding</button>
 					</div>
 				</div>

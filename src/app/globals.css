@@ -33,7 +33,7 @@ button {
 	@apply border-2 px-[24px] py-[11px] md:py-[14px] !rounded-[2rem] tracking-widest text-center bg-primary-color border-primary-color  text-[#F1F2F8] text-[16px] md:text-[16px] font-[700]  duration-500 transition transform active:scale-95 focus:outline-none;
 }
 .btn {
-	@apply px-[24px] py-[11px] rounded-[10px] text-center bg-white   text-primary-color  text-[16px] font-[700]   duration-500 transition transform active:scale-95 focus:outline-none border border-primary-color tracking-[0.5px];
+	@apply border-2 px-[24px] py-[11px] md:py-[14px] !rounded-[2rem] tracking-widest text-center bg-white text-primary-color border-primary-color text-[16px] font-[700] duration-500 transition transform active:scale-95 focus:outline-none;
 }
 .heading-1 {
 	@apply lg:text-[60px] md:text-[50px] text-primary-black text-[40px]  leading-[1.1em] font-[700];
@@ -54,13 +54,13 @@ button {
 	@apply text-[14px] font-[400] leading-[1.5em] text-white;
 }
 .timeline {
-	@apply border-l-4 border-gray-200 ml-3 mt-3 py-16 space-y-14;
+	@apply py-16 mt-3 ml-3 border-l-4 border-gray-200 space-y-14;
 }
 .vertical-center {
-	@apply flex flex-col justify-center items-center;
+	@apply flex flex-col items-center justify-center;
 }
 .horizontal-center {
-	@apply flex  justify-center items-center;
+	@apply flex items-center justify-center;
 }
 
 .vertical-timeline-element-title {
@@ -71,6 +71,34 @@ button {
 .swiper {
 	margin: 0 0 0 10px !important;
 }
+
+.dropdown {
+	position: relative;
+}
+
+.dropdown-menu {
+	@apply border-primary-color;
+}
+
+.dropdown:hover .dropdown-menu {
+	visibility: visible;
+	opacity: 1;
+}
+
+.dropdown-menu {
+	position: absolute;
+	top: 150%;
+	background: #fff;
+	border: 0.1rem solid;
+	border-left: none;
+	border-right: none;
+	padding: 0.5rem;
+	width: 10rem;
+	transition: all 0.5s ease-in-out;
+	visibility: hidden;
+	opacity: 0;
+}
+
 @media screen and (min-width: 1024px) {
 	.hero-bg {
 		background-image: url("/images/big-hero.gif");
