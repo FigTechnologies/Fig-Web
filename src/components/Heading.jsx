@@ -3,10 +3,10 @@ import { dm_sans } from "@/app/fonts"
 const Heading = ({ className, title, subtitle, text }) => {
 	return (
 		<div className={`space-y-4 mb-12 max-w-3xl w-full ${dm_sans.className} ${className ? className : ``}`}>
-			{title && <h5 className={`uppercase font-semibold opacity-70 tracking-widest text-base ${dm_sans.className}`}>{title}.</h5>}
+			{title && <h5 className={`uppercase font-semibold tracking-[.5px] text-[#8e94a9] text-[14px] mb-[1.5rem]`}>{title}.</h5>}
 			{subtitle && (
 				<h2
-					className={`text-5xl font-bold tracking-wider capitalize`}
+					className={`text-[3rem] font-bold leading-[1.1] capitalize tracking-[-.05em]`}
 					dangerouslySetInnerHTML={{ __html: subtitle }}
 				/>
 			)}

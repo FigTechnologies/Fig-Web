@@ -23,6 +23,39 @@ export const CardDetails = [
 		desc: "We fund 9 out of 10 qualified users, including creators, gig workers, small business owners, and black collar workers. This drives higher platform revenue and deeper user loyalty while unlocking meaningful financial access.",
 	},
 ]
+
+export const expertDetails = [
+	{
+		id: 0,
+		image: "/images/works-4.webp",
+		title: "Battle-tested APIs.",
+	},
+	{
+		id: 1,
+		image: "/images/works-5.webp",
+		title: "We embed our solution into your platform with a single API.",
+	},
+	{
+		id: 2,
+		image: "/images/works-6.webp",
+		title: "Go live in 7 days or less.",
+	},
+	{
+		id: 3,
+		image: "/images/works-6.webp",
+		title: "Our solutions experts can launch in less than a week, depending on the level of integration required.",
+	},
+	{
+		id: 4,
+		image: "/images/works-6.webp",
+		title: "Reduce churn by 75%.",
+	},
+	{
+		id: 5,
+		image: "/images/works-6.webp",
+		title: "Drive loyalty with AI-powered funding that meets your users’ real financial needs.",
+	},
+]
 export const TestimonialData = [
 	{
 		alt: " ",
