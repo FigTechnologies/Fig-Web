@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html
 			lang="en"
-			className={`${dm_sans.className} ${nunito_sans.className} ${inter.className}`}>
+			className={`${inter.className}`}>
 			<body className="relative w-full">
 				<div className="fixed z-[999] top-0 w-full">
 					<Navbar />
