@@ -7,6 +7,7 @@ const About = () => {
 		<section className="py-20 relative z-0">
 			<Container>
 				<Heading
+					className="mx-auto text-center md:mx-0 md:text-start"
 					title="About Us"
 					subtitle={`<span>
 							Rooted in Africa, Built for <span class="text-primary-color">Emerging Markets</span>
@@ -15,10 +16,10 @@ const About = () => {
 
 				<div className="grid md:grid-cols-2">
 					<div className="space-y-4">
-						<p className="text-[1.25rem] leading-[1.6] text-primary-black">We exist to unlock the full potential of underserved workers with flexible, accessible financial services. From Lagos to Kigali to Nairobi, we’re powering the creators, gig workers, and blue- and black-collar communities driving Africa’s informal economy — and beyond.</p>
+						<p className="text-[.9rem] md:text-[1.25rem] leading-[1.6] text-primary-black">We exist to unlock the full potential of underserved workers with flexible, accessible financial services. From Lagos to Kigali to Nairobi, we’re powering the creators, gig workers, and blue- and black-collar communities driving Africa’s informal economy — and beyond.</p>
 						<div className="flex items-center gap-4 mt-20">
-							<h5 className={`font-bold tracking-widest text-[1.3rem] border-s-2 ps-4 border-[#fc6956]`}>3+ businesses funded.</h5>
-							<h5 className={`font-bold tracking-widest text-[1.3rem] border-s-2 ps-4 border-[#fc6956]`}>2+ countries live and funding.</h5>
+							<h5 className={`font-bold tracking-widest text-[1rem] md:text-[1.3rem] border-s-2 ps-4 border-[#fc6956]`}>3+ businesses funded.</h5>
+							<h5 className={`font-bold tracking-widest text-[1rem] md:text-[1.3rem] border-s-2 ps-4 border-[#fc6956]`}>2+ countries live and funding.</h5>
 						</div>
 					</div>
 				</div>

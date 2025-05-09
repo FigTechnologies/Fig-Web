@@ -8,6 +8,7 @@ const FAQs = () => {
 		<section className="py-20 mt-[20dvh]">
 			<Container>
 				<Heading
+					className="mx-auto text-center md:mx-0 md:text-start"
 					title="FAQs"
 					subtitle={`<span>Frequently Asked Questions</span>`}
 				/>
@@ -24,7 +25,7 @@ const FAQs = () => {
 								),
 						)}
 					</div>
-					<div className="col-span-2 border-l md:col-span-1">
+					<div className="col-span-2 md:border-l md:col-span-1">
 						{FaqDetails.map(
 							(faq, idx) =>
 								idx % 2 != 0 && (

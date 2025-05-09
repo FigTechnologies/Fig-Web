@@ -6,7 +6,7 @@ const Heading = ({ className, title, subtitle, text }) => {
 			{title && <h5 className={`uppercase font-semibold tracking-[.5px] text-[#8e94a9] text-[14px] mb-[1.5rem]`}>{title}.</h5>}
 			{subtitle && (
 				<h2
-					className={`text-[3rem] font-bold leading-[1.1] capitalize tracking-[-.05em]`}
+					className={`text-[2.3rem] md:text-[3rem] font-bold leading-[1.1] capitalize tracking-[-.05em]`}
 					dangerouslySetInnerHTML={{ __html: subtitle }}
 				/>
 			)}

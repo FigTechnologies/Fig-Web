@@ -9,12 +9,12 @@ const Hero = () => {
 	return (
 		<div className="w-full md:pb-0">
 			<div className="relative w-full grid-cols-1 px-4 mx-auto md:grid lg:pb-0 md:grid-cols-2 md:w-full md:max-w-7xl md:min-h-screen lg:grid-cols-12">
-				<div className="mx-auto md:pt-[40px] pr-8 lg:pb-[40px] md:text-center lg:text-start md:w-9/12 md:mx-auto lg:w-full lg:mx-0 md:col-span-2 lg:flex flex-col lg:justify-center lg:col-span-6">
+				<div className="mx-auto pt-[5rem] text-center pr-8 pb-[40px] md:text-start md:w-9/12 md:mx-auto lg:w-full lg:mx-0 md:col-span-2 lg:flex flex-col lg:justify-center lg:col-span-6">
 					{/* <h4 className="mb-2 heading-4 text-primary-color ">Trusted By 100+ Creators</h4> */}
-					<h1 className="text-[3.4rem] leading-[1.3] font-inter font-semibold">
+					<h1 className="text-[1.6rem] md:text-[3.4rem] mb-8 leading-[1.5] md:leading-[1.3] font-inter font-semibold">
 						<span className="text-primary-color">AI-powered financing,</span> integrated directly into your platform.
 					</h1>
-					<span className="text-[1.25rem] leading-[1.6] my-8 text-primary-black">
+					<span className="text-[.9rem] md:text-[1.25rem] leading-[1.6] my-8 text-primary-black">
 						Our embedded finance solutions can be live on your platform in less than a week
 						{/* <MySwiper /> */}
 					</span>
@@ -24,12 +24,12 @@ const Hero = () => {
 							<MyTypewriter />
 						</span>
 					</span> */}
-					<div className="md:flex gap-[20px] md:my-5 lg:mt-[10px] md:justify-center lg:justify-start   ">
+					<div className="md:flex gap-[20px] mt-8 md:my-5 lg:mt-[10px] md:justify-center lg:justify-start   ">
 						<button className={`btn-colored ${dm_sans.className}`}> Apply For Funding</button>
 					</div>
 				</div>
 
-				<div className="h-[60vh] lg:block lg:h-full w-full lg:w-full relative md:mx-auto md:mt-5 lg:mt-0 md:col-span-2 lg:col-span-6">
+				<div className="h-[60vh] hidden md:block lg:h-full w-full lg:w-full relative md:mx-auto md:mt-5 lg:mt-0 md:col-span-2 lg:col-span-6">
 					<div className="absolute top-[calc(50%-5rem)] left-4 aspect-video w-80 rounded-3xl overflow-hidden z-10 border-[10px] border-white hover:scale-105 cursor-pointer transition-all ease-in-out duration-300">
 						<Image
 							src="/images/hero-1.jpg"

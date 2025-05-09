@@ -31,19 +31,15 @@ const WhyPartner = () => {
 	return (
 		<section className="py-20">
 			<Container>
-				<div className="p-20 bg-primary-color text-white rounded-3xl">
-					<div className="grid grid-cols-2 items-center">
+				<div className="p-8 md:p-20 bg-primary-color text-white rounded-3xl">
+					<div className="grid md:grid-cols-2 items-center">
 						<div>
 							<h5 className={`font-semibold tracking-[.5px] text-[14px] mb-[1.5rem]`}>Why partner with Fig Finance?</h5>
-							<Heading
-								subtitle={`<span class="text-white">
-							Empower your users. Unlock new revenue
-						</span>`}
-							/>
+							<Heading subtitle={`<span class="text-white">Empower your users. Unlock new revenue</span>`} />
 							<p className="text-[1rem] mb-4 leading-[1.4] text-white">Today’s gig workers, creators, and underserved communities expect more — instant access to funding, smart financial tools, and seamless support within the platforms they already use.</p>
 							<p className="text-[1rem] mb-4 leading-[1.4] text-white">At Fig Finance, we help you deliver all that and more, effortlessly.</p>
 						</div>
-						<div className="border-s border-dotted border-white space-y-4 px-8">
+						<div className="md:border-s md:border-dotted md:border-white space-y-4 md:px-8">
 							<div>
 								<h5 className={`font-semibold tracking-[.5px] text-[1.5rem] mb-[1rem]`}>Fast access, zero friction.</h5>
 								<p className="text-[1rem] mb-4 leading-[1.4] text-white">Our platform uses our proprietary credit scoring algorithm and AI to assess users in real time and disburse funds, often in under 24 hours. That’s why underserved workers keep coming back.</p>
