@@ -8,8 +8,8 @@ const FAQs = () => {
 		<section className="py-20 mt-[20dvh]">
 			<Container>
 				<Heading
-					className="mx-auto text-center"
 					title="FAQs"
+					subtitle={`<span>Frequently Asked Questions</span>`}
 				/>
 
 				<div className="md:w-full w-full grid grid-cols-2 mt-[50px]">

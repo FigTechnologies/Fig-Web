@@ -9,13 +9,13 @@ const AccordionLayout = ({ question, answer, value, id }) => {
 				type="single"
 				collapsible>
 				<AccordionItem value={value}>
-					<AccordionTrigger className="text-[18px] md:text-[25px] font-[900]  text-primary-black">
+					<AccordionTrigger className="text-[1.125rem] text-primary-black">
 						<div className="flex w-full">
-							<span className="w-2/12">{id}</span>
+							{/* <span className="w-2/12">{id}</span> */}
 							<span className="flex-1">{question} </span>
 						</div>
 					</AccordionTrigger>
-					<AccordionContent className="text-[16px]  md:text-[18px] font-[400] leading-[1.5em] text-primary-black">{answer}</AccordionContent>
+					<AccordionContent className="text-[1rem] leading-[1.4] text-[#3c4562]">{answer}</AccordionContent>
 				</AccordionItem>
 			</Accordion>
 		</div>

@@ -11,6 +11,7 @@ import TrackRecord from "@/components/home/TrackRecord"
 import WhatWeDo from "@/components/home/WhatWeDo"
 import { WhyPartner } from "@/components/home/WhyPartner"
 import Works from "@/components/home/Works"
+import { ReadyToStart } from "@/components/ReadyToStart"
 
 export default function Home() {
 	return (
@@ -28,6 +29,7 @@ export default function Home() {
 			{/* <Testimonial /> */}
 			{/* <Faq /> */}
 			<FAQs />
+			<ReadyToStart />
 		</main>
 	)
 }
