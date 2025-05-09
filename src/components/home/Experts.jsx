@@ -102,13 +102,13 @@ const Experts = () => {
 				</div> */}
 			</Container>
 
-			<Marquee className="w-full lg:w-full">
+			<Marquee className="w-full md:w-full">
 				<div className="flex gap-x-8 w-full">
 					{[...expertDetails, ...expertDetails].map((expert, index) => (
 						<ExpertCard
 							{...expert}
 							key={index}
-							className="w-full md:w-1/2 lg:w-1/4"
+							className="w-[400px]"
 						/>
 					))}
 				</div>

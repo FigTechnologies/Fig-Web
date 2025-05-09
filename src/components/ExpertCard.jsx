@@ -10,7 +10,7 @@ const ExpertCard = ({ className, image, title }) => {
 		<div
 			style={style}
 			className={`border overflow-hidden border-[#3A4262] rounded-[20px] text-[#F1F2F8] ${className}`}>
-			<div className="flex w-full justify-center items-center bg-accent-light h-[500px] relative">
+			<div className="flex w-full justify-center items-center bg-accent-light h-[200px] relative">
 				<Image
 					src={image}
 					alt="img"
@@ -19,7 +19,7 @@ const ExpertCard = ({ className, image, title }) => {
 				/>
 			</div>
 			<div className="p-4 bg-primary-color text-white h-full text-center">
-				<h5 className={`font-semibold tracking-[.5px] text-[1.5rem]`}>{title}</h5>
+				<h5 className={`tracking-[.5px] text-[1.2rem] md:text-[1.5rem]`}>{title}</h5>
 			</div>
 		</div>
 	)
