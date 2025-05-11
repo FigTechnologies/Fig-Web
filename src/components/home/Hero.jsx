@@ -2,6 +2,7 @@
 
 import { dm_sans } from "@/app/fonts"
 import Image from "next/image"
+import Link from "next/link"
 import MySwiper from "../MySwiper"
 import MyTypewriter from "../MyTypewriter"
 
@@ -25,7 +26,9 @@ const Hero = () => {
 						</span>
 					</span> */}
 					<div className="md:flex gap-[20px] mt-4 md:my-5 lg:mt-[10px] md:justify-center lg:justify-start   ">
-						<button className={`btn-colored ${dm_sans.className}`}> Apply For Funding</button>
+						<Link href="mailto:jp@figfinance.com">
+							<button className={`btn-colored ${dm_sans.className}`}>Contact Sales</button>
+						</Link>
 					</div>
 				</div>
 
