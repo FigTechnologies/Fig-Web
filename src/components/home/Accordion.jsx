@@ -1,21 +1,16 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-const AccordionLayout = ({ question, answer, value, id }) => {
+const AccordionLayout = ({ question, answer, value }) => {
 	return (
-		<div>
-			<Accordion
-				className="rounded-[5px] px-[20px] py-[5px] mb-3"
-				// className="border rounded-[5px] px-[20px] py-[5px] mb-3 bg-light-bg"
-				type="single"
-				collapsible>
-				<AccordionItem value={value}>
-					<AccordionTrigger className="text-[1.125rem] text-primary-black">
-						<div className="flex w-full">
-							{/* <span className="w-2/12">{id}</span> */}
-							<span className="flex-1">{question} </span>
-						</div>
+		<div className="bg-[#1E252B] border border-white/5 rounded-2xl px-6 py-2 shadow-sm transition-all duration-200 hover:border-teal-500/30">
+			<Accordion type="single" collapsible>
+				<AccordionItem value={value} className="border-none">
+					<AccordionTrigger className="text-lg font-bold text-white hover:no-underline py-4 text-left">
+						{question}
 					</AccordionTrigger>
-					<AccordionContent className="text-[1rem] leading-[1.4] text-[#3c4562]">{answer}</AccordionContent>
+					<AccordionContent className="text-slate-300 leading-relaxed pb-4 text-base">
+						{answer}
+					</AccordionContent>
 				</AccordionItem>
 			</Accordion>
 		</div>

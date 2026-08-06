@@ -1,135 +1,81 @@
 "use client"
 
-import { dm_sans, poppins } from "@/app/fonts"
-import { AnimatePresence, motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { Menu, X } from "lucide-react"
 
 const Navbar = () => {
-	const [isScrolled, setIsScrolled] = useState(false)
-	const [showDropdown, setSHowDropdown] = useState(false)
-	const ref = useRef(null)
-
-	const toggleDropdown = () => {
-		setSHowDropdown(!showDropdown)
-	}
-
-	const handleScroll = () => {
-		setIsScrolled(() => window.scrollY > 0)
-	}
-
-	// listen for  clicks outside of the menu dropdown and close the menu
-	useEffect(() => {
-		const handleClickOutside = e => {
-			if (ref && !ref.current.contains(e.target)) {
-				setSHowDropdown(false)
-			}
-		}
-
-		document.addEventListener("mousedown", handleClickOutside)
-
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside)
-		}
-	}, [])
-
-	useEffect(() => {
-		window.addEventListener("scroll", handleScroll)
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll)
-		}
-	}, [isScrolled])
+	const [showMobile, setShowMobile] = useState(false)
 
 	return (
-		<nav className={`${isScrolled ? "bg-primary-color" : "bg-white border-b-2"} sticky top-0  h-[70px]  lg:h-auto lg:py-[5px]   transition-all duration-300 `}>
-			<div className={`flex justify-between max-w-7xl w-full px-4 mx-auto h-full relative items-center ${isScrolled ? " text-white" : "text-primary-color"}`}>
-				<AnimatePresence mode="wait">
-					{isScrolled ? (
-						<motion.div
-							key="logo-white"
-							initial={{ opacity: 0, y: 30 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: 30 }}
-							transition={{ duration: 0.2, ease: "easeInOut" }}
-							className="h-[70px] w-[170px]  relative">
-							<Link href="/">
-								<Image
-									src="/images/logo-white-2.png"
-									alt="fig finance logo"
-									fill
-									className="object-contain"
-								/>
-							</Link>
-						</motion.div>
-					) : (
-						<motion.div
-							key="logo-dark"
-							initial={{ opacity: 0, y: -50 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -50 }}
-							transition={{ duration: 0.2, ease: "easeInOut" }}
-							className="h-[70px] w-[170px] relative">
-							<Link href="/">
-								<Image
-									src="/images/logo.png"
-									alt="fig finance logo"
-									fill
-									className="object-contain"
-								/>
-							</Link>
-						</motion.div>
-					)}
-				</AnimatePresence>
+		<header className="sticky top-0 z-50 bg-[#121619]/90 backdrop-blur-md border-b border-white/10">
+			<div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+				<Link href="/" className="h-9 w-32 relative">
+					<Image
+						src="/images/logo-white-2.png"
+						alt="Fig"
+						fill
+						className="object-contain object-left"
+					/>
+				</Link>
 
-				<div className="flex items-center justify-between gap-8">
-					<div className={`lg:flex gap-[20px] hidden  text-[15px] font-[600] ${dm_sans.className} `}>
-						<Link
-							href="#"
-							className="dropdown">
-							Products
-							<ul className="dropdown-menu">
-								<li>
-									<Link href="/products/early-pay">Early Pay</Link>
-								</li>
-							</ul>
+				<nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-white">
+					<Link href="#products" className="hover:text-slate-300 transition-colors">Products</Link>
+					<Link href="#developers" className="hover:text-slate-300 transition-colors">Developers</Link>
+					<Link href="#company" className="hover:text-slate-300 transition-colors">Company</Link>
+				</nav>
+
+				<div className="hidden md:block">
+					<Link href="mailto:[TODO: confirm contact email]">
+						<button className="btn-primary text-sm py-2.5 px-6">
+							Contact Sales
+						</button>
+					</Link>
+				</div>
+
+				<button
+					className="md:hidden p-2 text-white"
+					onClick={() => setShowMobile(!showMobile)}
+					aria-label="Toggle menu"
+				>
+					{showMobile ? <X size={24} /> : <Menu size={24} />}
+				</button>
+			</div>
+
+			{showMobile && (
+				<div className="md:hidden bg-[#121619] border-b border-white/10 px-6 py-6 space-y-4 shadow-lg">
+					<Link
+						href="#products"
+						className="block font-semibold text-white py-2"
+						onClick={() => setShowMobile(false)}
+					>
+						Products
+					</Link>
+					<Link
+						href="#developers"
+						className="block font-semibold text-white py-2"
+						onClick={() => setShowMobile(false)}
+					>
+						Developers
+					</Link>
+					<Link
+						href="#company"
+						className="block font-semibold text-white py-2"
+						onClick={() => setShowMobile(false)}
+					>
+						Company
+					</Link>
+					<div className="pt-2">
+						<Link href="mailto:[TODO: confirm contact email]" onClick={() => setShowMobile(false)}>
+							<button className="btn-primary w-full py-3">
+								Contact Sales
+							</button>
 						</Link>
-						{/* <Link href="#">Use Cases</Link> */}
-						<Link href="#">Developers</Link>
-						<Link href="#">Company</Link>
-					</div>
-					<div className="hidden lg:block">
-						<button className={`text-[15px] font-[700] ${isScrolled ? "btn" : "btn-colored"}`}>Contact Sales</button>
-					</div>
-
-					{/* hamburger menu for mobile  */}
-					<div
-						ref={ref}
-						className="lg:hidden "
-						onClick={toggleDropdown}>
-						{showDropdown ? <X /> : <Menu />}
 					</div>
 				</div>
-				{/* {showDropdown && (
-          <div className="lg:hidden absolute top-[70px] w-full h-[300px] z-[999] bg-dark-gray ">
-            <ul className="space-y-3 text-black ">
-              <li className="">
-                <Link href="#" className="w-full h-full">
-                  About
-                </Link>
-              </li>
-              <li className="">
-                <Link href="#" className="w-full h-full">
-                  Services
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )} */}
-			</div>
-		</nav>
+			)}
+		</header>
 	)
 }
 

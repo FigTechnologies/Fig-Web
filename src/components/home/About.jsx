@@ -1,43 +1,41 @@
-import { dm_sans } from "@/app/fonts"
+"use client"
+
 import { Container } from "../Container"
-import { Heading } from "../Heading"
 
 const About = () => {
 	return (
-		<section className="py-20 relative z-0">
+		<section id="about" className="py-24 bg-[#121619] border-y border-white/5">
 			<Container>
-				<Heading
-					className="mx-auto text-center md:mx-0 md:text-start"
-					title="About Us"
-					subtitle={`<span>
-							Rooted in Africa, Built for <span class="text-primary-color">Emerging Markets</span>
-						</span>`}
-				/>
+				<div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-16 items-center justify-between">
+					{/* Text Section */}
+					<div className="md:w-1/2">
+						<h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+							Rooted In Africa, Built For <span className="text-teal-400">Emerging Markets</span>
+						</h2>
+						<p className="text-slate-300 text-lg leading-relaxed">
+							We exist to unlock the full potential of underserved workers by providing seamless access to productive clean energy assets. Digital platforms already have the trust and payment flows to solve this—they just need the credit infrastructure.
+						</p>
+					</div>
 
-				<div className="grid md:grid-cols-2">
-					<div className="space-y-4">
-						<p className="text-[.9rem] md:text-[1.25rem] leading-[1.6] text-primary-black">We exist to unlock the full potential of underserved workers with flexible, accessible financial services. From Lagos to Kigali to Nairobi, we’re powering the creators, gig workers, and blue- and black-collar communities driving Africa’s informal economy — and beyond.</p>
-						<div className="flex items-center gap-4 mt-20">
-							<h5 className={`font-bold tracking-widest text-[1rem] md:text-[1.3rem] border-s-2 ps-4 border-[#fc6956]`}>3+ businesses funded.</h5>
-							<h5 className={`font-bold tracking-widest text-[1rem] md:text-[1.3rem] border-s-2 ps-4 border-[#fc6956]`}>2+ countries live and funding.</h5>
+					{/* Stats Section */}
+					<div className="md:w-1/2 flex flex-col sm:flex-row gap-12 sm:gap-16 justify-center">
+						<div className="text-center sm:text-left">
+							<div className="text-sm text-slate-400 font-semibold mb-2 uppercase tracking-wider">Trusted by</div>
+							<div className="flex items-baseline gap-2 justify-center sm:justify-start">
+								<span className="text-5xl md:text-6xl font-bold text-white">3+</span>
+								<span className="text-lg text-teal-400 font-medium">businesses<br/>funded</span>
+							</div>
+						</div>
+						<div className="text-center sm:text-left">
+							<div className="text-sm text-slate-400 font-semibold mb-2 uppercase tracking-wider">Operating in</div>
+							<div className="flex items-baseline gap-2 justify-center sm:justify-start">
+								<span className="text-5xl md:text-6xl font-bold text-white">2+</span>
+								<span className="text-lg text-teal-400 font-medium">countries<br/>live</span>
+							</div>
 						</div>
 					</div>
 				</div>
 			</Container>
-			<div class="video-wrap">
-				<video
-					src="https://player.vimeo.com/progressive_redirect/playback/1007970218/rendition/720p/file.mp4?loc=external&amp;log_user=0&amp;signature=9eb2320cc14745ba9525d1deef375625678ea753667c0d29a6f4bdba0363b9a7"
-					autoplay="true"
-					loop=""
-					playsinline="true"
-					video-cursor="true"
-					muted=""
-					border="none"
-					style={{ objectFit: `scale-down` }}
-					class="globe-video"></video>
-				<div class="globe-video overlay bg-0"></div>
-				<div class="w-embed"></div>
-			</div>
 		</section>
 	)
 }

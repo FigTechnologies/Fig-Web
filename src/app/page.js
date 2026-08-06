@@ -1,34 +1,33 @@
 import { About } from "@/components/home/About"
-import Choose from "@/components/home/Choose"
-import Creators from "@/components/home/Creators"
 import { Experts } from "@/components/home/Experts"
-import Faq from "@/components/home/Faq"
 import { FAQs } from "@/components/home/FAQs"
-import FigHero from "@/components/home/FigHero"
 import Hero from "@/components/home/Hero"
-import Testimonial from "@/components/home/Testimonial"
-import TrackRecord from "@/components/home/TrackRecord"
-import WhatWeDo from "@/components/home/WhatWeDo"
 import { WhyPartner } from "@/components/home/WhyPartner"
-import Works from "@/components/home/Works"
 import { ReadyToStart } from "@/components/ReadyToStart"
 
 export default function Home() {
 	return (
-		<main className="">
-			{/* <FigHero /> */}
+		<main>
+			{/* Hero — one-liner + problem statement + partner CTA */}
 			<Hero />
-			<About />
+
+			{/* The Problem — 600M unelectrified, 21.7M digital earners, platform data gap; video embed */}
+			<section id="about">
+				<About />
+			</section>
+
+			{/* How It Works — 3-step flow + Why Fig differentiation */}
 			<WhyPartner />
+
+			{/* Traction & Partners — verified stats + platform partner marquee */}
 			<Experts />
-			{/* <Creators /> */}
-			{/* <WhatWeDo /> */}
-			{/* <Choose /> */}
-			{/* <Works /> */}
-			{/* <TrackRecord /> */}
-			{/* <Testimonial /> */}
-			{/* <Faq /> */}
-			<FAQs />
+
+			{/* FAQs — platform partner audience */}
+			<section id="faqs">
+				<FAQs />
+			</section>
+
+			{/* CTA — Talk to our partnerships team */}
 			<ReadyToStart />
 		</main>
 	)

@@ -1,40 +1,28 @@
 import { FaqDetails } from "@/libs/data"
 import { Container } from "../Container"
-import { Heading } from "../Heading"
 import AccordionLayout from "./Accordion"
 
 const FAQs = () => {
 	return (
-		<section className="py-20 mt-[20dvh]">
+		<section id="faqs" className="py-24 bg-[#121619]">
 			<Container>
-				<Heading
-					className="mx-auto text-center md:mx-0 md:text-start"
-					title="FAQs"
-					subtitle={`<span>Frequently Asked Questions</span>`}
-				/>
-
-				<div className="md:w-full w-full grid grid-cols-2 mt-[50px]">
-					<div className="col-span-2 md:col-span-1">
-						{FaqDetails.map(
-							(faq, idx) =>
-								idx % 2 == 0 && (
-									<AccordionLayout
-										{...faq}
-										key={faq.value}
-									/>
-								),
-						)}
+				<div className="max-w-3xl mx-auto">
+					<div className="text-center mb-16">
+						<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+							Frequently asked questions
+						</h2>
+						<p className="text-slate-300 text-lg">
+							Everything you need to know about embedding Fig into your platform.
+						</p>
 					</div>
-					<div className="col-span-2 md:border-l md:col-span-1">
-						{FaqDetails.map(
-							(faq, idx) =>
-								idx % 2 != 0 && (
-									<AccordionLayout
-										{...faq}
-										key={faq.value}
-									/>
-								),
-						)}
+
+					<div className="space-y-4">
+						{FaqDetails.map((faq) => (
+							<AccordionLayout
+								{...faq}
+								key={faq.value}
+							/>
+						))}
 					</div>
 				</div>
 			</Container>
