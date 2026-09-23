@@ -3,38 +3,43 @@
 import Link from "next/link"
 import { Zap, Activity, Code, Sun, Battery, Wifi } from "lucide-react"
 import { Container } from "@/components/Container"
+import { usePartnerModal } from "@/context/PartnerModalContext"
 
 /* ─── A. HERO ─── */
-const PowerNowHero = () => (
-	<section className="relative bg-[#0B353D] pt-32 pb-24 overflow-hidden">
-		{/* Background glow blobs */}
-		<div className="pointer-events-none absolute inset-0">
-			<div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px]" />
-			<div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-teal-400/10 rounded-full blur-[100px]" />
-		</div>
+const PowerNowHero = () => {
+	const { openModal } = usePartnerModal()
 
-		<Container className="relative z-10">
-			<div className="grid md:grid-cols-2 gap-14 items-center">
-				{/* Left */}
-				<div>
-					<span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-[#07969E]/20 border border-[#00A3AD]/30 text-[#00A3AD] text-sm font-medium">
-						⚡ Power Now — by Fig Finance
-					</span>
-					<h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-white mb-6">
-						Powering Africa&apos;s <br />
-						<span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-teal-500">
-							Digital Economy.
+	return (
+		<section className="relative bg-[#0B353D] pt-32 pb-24 overflow-hidden">
+			{/* Background glow blobs */}
+			<div className="pointer-events-none absolute inset-0">
+				<div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px]" />
+				<div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-teal-400/10 rounded-full blur-[100px]" />
+			</div>
+
+			<Container className="relative z-10">
+				<div className="grid md:grid-cols-2 gap-14 items-center">
+					{/* Left */}
+					<div>
+						<span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-[#07969E]/20 border border-[#00A3AD]/30 text-[#00A3AD] text-sm font-medium">
+							⚡ Power Now — by Fig Finance
 						</span>
-					</h1>
-					<p className="text-lg text-teal-100/75 leading-relaxed mb-10 max-w-lg">
-						We are building the infrastructure that connects digital platforms to clean energy. Enable your users to finance productive solar assets through embedded credit.
-					</p>
-					<div className="flex flex-wrap gap-4">
-						<Link href="mailto:hello@figfinance.co">
-							<button className="px-7 py-3.5 rounded-full bg-white text-[#0B353D] font-bold text-sm hover:bg-teal-50 transition-colors shadow-lg">
+						<h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-white mb-6">
+							Powering Africa&apos;s <br />
+							<span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-teal-500">
+								Digital Economy.
+							</span>
+						</h1>
+						<p className="text-lg text-teal-100/75 leading-relaxed mb-10 max-w-lg">
+							We are building the infrastructure that connects digital platforms to clean energy. Enable your users to finance productive solar assets through embedded credit.
+						</p>
+						<div className="flex flex-wrap gap-4">
+							<button
+								onClick={openModal}
+								className="px-7 py-3.5 rounded-full bg-white text-[#0B353D] font-bold text-sm hover:bg-teal-50 transition-colors shadow-lg"
+							>
 								Become a Partner
 							</button>
-						</Link>
 						<Link href="#how-it-works">
 							<button className="px-7 py-3.5 rounded-full border border-teal-400/50 text-teal-300 font-semibold text-sm hover:bg-teal-400/10 transition-colors">
 								Learn More
@@ -108,7 +113,8 @@ const PowerNowHero = () => (
 			</div>
 		</Container>
 	</section>
-)
+	)
+}
 
 /* ─── B. PROBLEM & SOLUTION ─── */
 const ProblemSolution = () => (
@@ -269,38 +275,43 @@ const WhoWeServe = () => (
 )
 
 /* ─── E. BOTTOM CTA ─── */
-const PowerNowCTA = () => (
-	<section className="bg-[#121619] py-24">
-		<Container>
-			<div className="relative rounded-3xl bg-[#0B353D] border border-teal-700/40 p-12 md:p-16 text-center overflow-hidden">
-				{/* Decorative glows */}
-				<div className="pointer-events-none absolute inset-0">
-					<div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-teal-400/50 to-transparent" />
-					<div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-teal-400/5 rounded-full blur-3xl" />
-				</div>
+const PowerNowCTA = () => {
+	const { openModal } = usePartnerModal()
 
-				<div className="relative">
-					<div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-[#07969E]/20 border border-[#00A3AD]/30 text-[#00A3AD] text-sm font-medium">
-						<Zap className="w-3.5 h-3.5" />
-						Power Now · Partnership Program
+	return (
+		<section className="bg-[#121619] py-24">
+			<Container>
+				<div className="relative rounded-3xl bg-[#0B353D] border border-teal-700/40 p-12 md:p-16 text-center overflow-hidden">
+					{/* Decorative glows */}
+					<div className="pointer-events-none absolute inset-0">
+						<div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-teal-400/50 to-transparent" />
+						<div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-teal-400/5 rounded-full blur-3xl" />
 					</div>
-					<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
-						Ready to power your platform?
-					</h2>
-					<p className="text-teal-100/70 text-lg leading-relaxed max-w-xl mx-auto mb-10">
-						Join us in expanding financial inclusion and accelerating clean energy adoption across Africa.
-					</p>
-					<Link href="mailto:hello@figfinance.co">
-						<button className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0B4A30] text-white font-bold text-base hover:bg-[#0d5a3a] transition-colors shadow-lg shadow-black/30">
+
+					<div className="relative">
+						<div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-[#07969E]/20 border border-[#00A3AD]/30 text-[#00A3AD] text-sm font-medium">
+							<Zap className="w-3.5 h-3.5" />
+							Power Now · Partnership Program
+						</div>
+						<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
+							Ready to power your platform?
+						</h2>
+						<p className="text-teal-100/70 text-lg leading-relaxed max-w-xl mx-auto mb-10">
+							Join us in expanding financial inclusion and accelerating clean energy adoption across Africa.
+						</p>
+						<button
+							onClick={openModal}
+							className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0B4A30] text-white font-bold text-base hover:bg-[#0d5a3a] transition-colors shadow-lg shadow-black/30"
+						>
 							<Zap className="w-4 h-4 text-emerald-400" />
 							Partner with Fig
 						</button>
-					</Link>
+					</div>
 				</div>
-			</div>
-		</Container>
-	</section>
-)
+			</Container>
+		</section>
+	)
+}
 
 /* ─── PAGE ─── */
 export default function PowerNowPage() {

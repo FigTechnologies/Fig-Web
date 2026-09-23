@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
+import { PartnerModalProvider } from "@/context/PartnerModalContext"
 import "./globals.css"
 
 export const metadata = {
@@ -35,11 +36,13 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className="relative w-full antialiased text-slate-300 bg-[#121619]">
-				<div className="fixed z-[999] top-0 w-full">
-					<Navbar />
-				</div>
-				{children}
-				<Footer />
+				<PartnerModalProvider>
+					<div className="fixed z-[999] top-0 w-full">
+						<Navbar />
+					</div>
+					{children}
+					<Footer />
+				</PartnerModalProvider>
 			</body>
 		</html>
 	)
