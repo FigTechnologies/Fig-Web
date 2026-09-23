@@ -233,7 +233,7 @@ const HowItWorks = () => (
 
 /* ─── D. WHO WE SERVE ─── */
 const platforms = [
-	{ category: "Creator Economy", names: ["Selar", "Nestuge"] },
+	{ category: "Creator Economy", names: ["Nestuge"] },
 	{ category: "Ride-Hailing", names: ["Bolt", "Glovo"] },
 	{ category: "Freelance Marketplaces", names: ["Wrkman"] },
 	{ category: "E-commerce", names: ["Jumia", "Twiva"] },
