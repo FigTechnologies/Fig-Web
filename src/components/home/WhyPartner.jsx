@@ -35,7 +35,7 @@ const WhyPartner = () => {
 						</p>
 						<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-400/10 border border-teal-400/20 text-sm text-teal-300 font-medium">
 							<span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
-							Live with Selar in pilot
+							Currently live in pilot
 						</div>
 					</div>
 

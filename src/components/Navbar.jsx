@@ -25,7 +25,6 @@ const Navbar = () => {
 				<nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-white">
 					<Link href="#about" className="hover:text-slate-300 transition-colors">About</Link>
 					<Link href="#how-it-works" className="hover:text-slate-300 transition-colors">How It Works</Link>
-					<Link href="#pesascore" className="hover:text-slate-300 transition-colors">PesaScore</Link>
 				</nav>
 
 				<div className="hidden md:block">
@@ -61,13 +60,6 @@ const Navbar = () => {
 						onClick={() => setShowMobile(false)}
 					>
 						How It Works
-					</Link>
-					<Link
-						href="#pesascore"
-						className="block font-semibold text-white py-2"
-						onClick={() => setShowMobile(false)}
-					>
-						PesaScore
 					</Link>
 					<div className="pt-2">
 						<button

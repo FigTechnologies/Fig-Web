@@ -29,7 +29,7 @@ const Hero = () => {
 						We enable platforms where over <strong className="text-white">20 million Africans earn</strong> to embed clean energy financing — underwritten by PesaScore, repaid automatically from platform payouts.
 					</p>
 					<p className="text-sm text-teal-100/50 mb-10 max-w-lg">
-						Live in Nigeria &amp; Kenya. Anchor partner: Selar.
+						Live in Nigeria &amp; Kenya.
 					</p>
 					<div className="flex flex-col sm:flex-row items-start gap-4">
 						<button
@@ -70,7 +70,7 @@ const Hero = () => {
 							<p><span className="text-slate-500">{"// Platform payout webhook received"}</span></p>
 							<p className="text-slate-300"><span className="text-teal-400">POST</span> /v1/repayments/collect</p>
 							<div className="mt-3 bg-white/[0.03] rounded-xl p-4 border border-white/5 space-y-1.5">
-								<p><span className="text-slate-500">user_id:</span> <span className="text-amber-300">&quot;selar_usr_4821&quot;</span></p>
+								<p><span className="text-slate-500">user_id:</span> <span className="text-amber-300">&quot;platform_usr_4821&quot;</span></p>
 								<p><span className="text-slate-500">payout_amount:</span> <span className="text-emerald-300">₦18,400</span></p>
 								<p><span className="text-slate-500">deduction:</span> <span className="text-teal-300">₦4,600</span></p>
 								<p><span className="text-slate-500">net_to_user:</span> <span className="text-white">₦13,800</span></p>

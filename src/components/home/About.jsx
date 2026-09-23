@@ -21,7 +21,7 @@ const stats = [
 	{
 		number: "1",
 		label: "Anchor partner\nin pilot",
-		sublabel: "Selar — live cohort",
+		sublabel: "Anchor partner in pilot",
 	},
 ]
 

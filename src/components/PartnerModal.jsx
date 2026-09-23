@@ -133,7 +133,7 @@ export default function PartnerModal({ isOpen, onClose }) {
 										type="text"
 										name="companyName"
 										required
-										placeholder="e.g. Selar / Bolt"
+										placeholder="e.g. Bolt / Jumia"
 										value={formData.companyName}
 										onChange={handleChange}
 										className="w-full px-4 py-3 rounded-xl bg-[#121619] border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:border-teal-400 text-sm transition-colors"
