@@ -1,73 +1,104 @@
 "use client"
 
-import { dm_sans } from "@/app/fonts"
-import Image from "next/image"
 import Link from "next/link"
-import MySwiper from "../MySwiper"
-import MyTypewriter from "../MyTypewriter"
+import { usePartnerModal } from "@/context/PartnerModalContext"
 
 const Hero = () => {
+	const { openModal } = usePartnerModal()
+
 	return (
-		<div className="w-full md:pb-0">
-			<div className="relative w-full grid-cols-1 px-4 mx-auto md:grid lg:pb-0 md:grid-cols-2 md:w-full md:max-w-7xl md:min-h-screen lg:grid-cols-12">
-				<div className="mx-auto pt-[7rem] text-center pr-8 pb-[40px] md:text-start md:w-9/12 md:mx-auto lg:w-full lg:mx-0 md:col-span-2 lg:flex flex-col lg:justify-center lg:col-span-6">
-					{/* <h4 className="mb-2 heading-4 text-primary-color ">Trusted By 100+ Creators</h4> */}
-					<h1 className="text-[2.4rem] md:text-[3.4rem] mb-4 leading-[1.5] md:leading-[1.3] font-inter font-semibold">
-						<span className="text-primary-color">AI-powered financing,</span> integrated directly into your platform.
+		<section className="relative pt-24 pb-20 md:pt-32 md:pb-28 bg-[#0B353D] overflow-hidden">
+			{/* Subtle background radial */}
+			<div className="pointer-events-none absolute inset-0">
+				<div className="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-400/5 rounded-full blur-[120px]" />
+			</div>
+
+			<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+				{/* Left Content */}
+				<div>
+					{/* Announcement Badge */}
+					<Link href="/power-now" className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-[#07969E]/20 border border-[#00A3AD]/30 text-[#00A3AD] text-sm font-medium hover:bg-[#07969E]/30 transition-all duration-200 group">
+						<span>✨ New: Embedded solar financing with Power Now</span>
+						<span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+					</Link>
+
+					<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+						Fig connects Africa&apos;s clean energy economy to its digital economy.
 					</h1>
-					<span className="text-[1.25rem] leading-[1.6] my-8 text-primary-black">
-						Our embedded finance solutions can be live on your platform in less than a week
-						{/* <MySwiper /> */}
-					</span>
-					{/* <span className="text-base md:h-[30px] font-[400] text-primary-black block my-8 lg:hidden  ">
-						Powering the dreams of {"    "}{" "}
-						<span className="text-[#050914] font-[700]">
-							<MyTypewriter />
-						</span>
-					</span> */}
-					<div className="md:flex gap-[20px] mt-4 md:my-5 lg:mt-[10px] md:justify-center lg:justify-start   ">
-						<Link href="mailto:jp@figfinance.com">
-							<button className={`btn-colored ${dm_sans.className}`}>Contact Sales</button>
+					<p className="text-lg md:text-xl text-teal-100/75 mb-4 max-w-lg leading-relaxed">
+						We enable platforms where over <strong className="text-white">20 million Africans earn</strong> to embed clean energy financing — underwritten by PesaScore, repaid automatically from platform payouts.
+					</p>
+					<p className="text-sm text-teal-100/50 mb-10 max-w-lg">
+						Live in Nigeria &amp; Kenya. Anchor partner: Selar.
+					</p>
+					<div className="flex flex-col sm:flex-row items-start gap-4">
+						<button
+							onClick={openModal}
+							className="btn-primary w-full sm:w-auto text-base"
+						>
+							Become a Partner
+						</button>
+						<Link href="#how-it-works">
+							<button className="w-full sm:w-auto px-7 py-3.5 rounded-full border border-teal-400/40 text-teal-300 text-base font-semibold hover:bg-teal-400/10 transition-colors">
+								How it works
+							</button>
 						</Link>
 					</div>
 				</div>
 
-				<div className="h-[80dvh] md:h-[60dvh] lg:h-full w-full lg:w-full relative md:mx-auto md:mt-5 lg:mt-0 md:col-span-2 lg:col-span-6">
-					<div className="absolute top-[35%] md:top-[calc(50%-5rem)] left-[.5rem] md:left-4 aspect-video w-[15rem] md:w-80 rounded-3xl overflow-hidden z-10 border-[5px] md:border-[10px] border-white hover:scale-105 cursor-pointer transition-all ease-in-out duration-300">
-						<Image
-							src="/images/hero-1.jpg"
-							alt="fig creators gif image"
-							fill
-							className="object-cover"
-						/>
+				{/* Right — API/Integration mockup */}
+				<div className="relative w-full flex justify-center items-center">
+					<div className="absolute inset-0 bg-teal-400/10 blur-[80px] rounded-full pointer-events-none" />
+
+					{/* API flow card */}
+					<div className="relative z-10 w-full max-w-sm rounded-3xl bg-[#121619]/95 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden">
+						{/* Top glare */}
+						<div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal-400/40 to-transparent" />
+
+						{/* Header */}
+						<div className="px-6 py-4 border-b border-white/5 flex items-center justify-between">
+							<div className="flex items-center gap-2">
+								<div className="w-2 h-2 rounded-full bg-red-500/70" />
+								<div className="w-2 h-2 rounded-full bg-amber-500/70" />
+								<div className="w-2 h-2 rounded-full bg-emerald-500/70" />
+							</div>
+							<span className="text-xs text-slate-500 font-mono">Fig API · PesaScore</span>
+						</div>
+
+						{/* Code area */}
+						<div className="p-6 font-mono text-xs space-y-1">
+							<p><span className="text-slate-500">{"// Platform payout webhook received"}</span></p>
+							<p className="text-slate-300"><span className="text-teal-400">POST</span> /v1/repayments/collect</p>
+							<div className="mt-3 bg-white/[0.03] rounded-xl p-4 border border-white/5 space-y-1.5">
+								<p><span className="text-slate-500">user_id:</span> <span className="text-amber-300">&quot;selar_usr_4821&quot;</span></p>
+								<p><span className="text-slate-500">payout_amount:</span> <span className="text-emerald-300">₦18,400</span></p>
+								<p><span className="text-slate-500">deduction:</span> <span className="text-teal-300">₦4,600</span></p>
+								<p><span className="text-slate-500">net_to_user:</span> <span className="text-white">₦13,800</span></p>
+							</div>
+							<div className="mt-4 bg-teal-500/10 rounded-xl p-4 border border-teal-500/20 space-y-1.5">
+								<p className="text-teal-400 font-semibold">200 OK — Repayment collected</p>
+								<p><span className="text-slate-500">pesascore:</span> <span className="text-white">742 <span className="text-emerald-400">↑ +12</span></span></p>
+								<p><span className="text-slate-500">status:</span> <span className="text-emerald-400">&quot;on_track&quot;</span></p>
+							</div>
+						</div>
+
+						{/* Flow label */}
+						<div className="px-6 pb-5 flex items-center justify-between text-xs text-slate-500">
+							<span>Automated. No consumer app required.</span>
+							<span className="flex items-center gap-1 text-teal-400 font-semibold">
+								<span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+								Live
+							</span>
+						</div>
 					</div>
-					<div className="absolute top-0 mt:top-40 left-[1.5rem] md:left-[6rem] h-[70dvh] w-[25rem] rounded-3xl overflow-hidden z-0">
-						<Image
-							src="/images/hero-4.jpg"
-							alt="fig creators gif image"
-							fill
-							className="object-cover"
-						/>
-					</div>
-					<div className="absolute -top-4 md:top-[calc(20%-5rem)] -right-[.5rem] md:right-4 aspect-video w-[15rem] md:w-80 rounded-3xl overflow-hidden z-10 border-[5px] md:border-[10px] border-white hover:scale-105 cursor-pointer transition-all ease-in-out duration-300">
-						<Image
-							src="/images/hero-2.jpg"
-							alt="fig creators gif image"
-							fill
-							className="object-cover"
-						/>
-					</div>
-					<div className="absolute top-[calc(65%-5rem)] -right-[.5rem] md:-right-20 h-[22rem] w-[15rem] md:w-80 rounded-3xl overflow-hidden z-10 border-[5px] md:border-[10px] border-white hover:scale-105 cursor-pointer transition-all ease-in-out duration-300">
-						<Image
-							src="/images/hero-3.jpg"
-							alt="fig creators gif image"
-							fill
-							className="object-cover"
-						/>
+
+					{/* Floating badge */}
+					<div className="absolute -bottom-4 -left-4 z-20 rounded-2xl bg-[#1E252B] border border-white/10 px-4 py-2.5 shadow-xl text-xs font-semibold text-white flex items-center gap-2">
+						<span className="text-teal-400">⚡</span> Repaid from platform payouts
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	)
 }
 

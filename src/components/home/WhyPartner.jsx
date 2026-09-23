@@ -1,92 +1,63 @@
 "use client"
 
-import { dm_sans } from "@/app/fonts"
-import { CardDetails } from "@/libs/data"
-import { motion } from "framer-motion"
 import { Container } from "../Container"
-import FlipCard from "../FlipCard"
-import { Heading } from "../Heading"
+import { CheckCircle2 } from "lucide-react"
 
-// const variants = {
-// 	initial: {
-// 		opacity: 0,
-// 		y: 30,
-// 	},
-// 	animate: index => ({
-// 		opacity: 1,
-// 		y: 0,
-// 		transition: {
-// 			delay: 0.2 * index,
-// 			type: "spring",
-// 			stiffness: 100,
-// 			damping: 10,
-// 			bounce: 0.25,
-// 			duration: 0.8,
-// 			ease: "easeInOut",
-// 		},
-// 	}),
-// }
+const steps = [
+	{
+		title: "PesaScore underwrites in seconds",
+		desc: "Our behavioral credit engine reads earnings consistency, transaction frequency, and payout regularity directly from partner platform data — no credit bureau required. A decision in under 3 seconds.",
+	},
+	{
+		title: "Solar asset, zero upfront cost",
+		desc: "Approved users receive a productive solar system — panels, battery, inverter — financed entirely through the platform. No cash deposit. No paperwork. The platform remains the only touchpoint.",
+	},
+	{
+		title: "Repayments deduct from payouts automatically",
+		desc: "When a user earns on the platform, a pre-agreed portion of their payout is automatically collected by Fig before it reaches their wallet. The platform's payout API handles everything — aligned with how earners actually earn.",
+	},
+]
 
 const WhyPartner = () => {
 	return (
-		<section className="py-20">
+		<section id="how-it-works" className="py-24 bg-[#0B353D]">
 			<Container>
-				<div className="p-8 md:p-20 bg-primary-color text-white rounded-3xl">
-					<div className="grid md:grid-cols-2 items-center">
-						<div>
-							<h5 className={`font-semibold tracking-[.5px] text-[14px] mb-[1.5rem]`}>Why partner with Fig Finance?</h5>
-							<Heading subtitle={`<span class="text-white">Empower your users. Unlock new revenue</span>`} />
-							<p className="text-[1rem] mb-4 leading-[1.4] text-white">Today’s gig workers, creators, and underserved communities expect more — instant access to funding, smart financial tools, and seamless support within the platforms they already use.</p>
-							<p className="text-[1rem] mb-4 leading-[1.4] text-white">At Fig Finance, we help you deliver all that and more, effortlessly.</p>
-						</div>
-						<div className="md:border-s md:border-dotted md:border-white space-y-4 md:px-8">
-							<div>
-								<h5 className={`font-semibold tracking-[.5px] text-[1.5rem] mb-[1rem]`}>Fast access, zero friction.</h5>
-								<p className="text-[1rem] mb-4 leading-[1.4] text-white">Our platform uses our proprietary credit scoring algorithm and AI to assess users in real time and disburse funds, often in under 24 hours. That’s why underserved workers keep coming back.</p>
-							</div>
-							<div>
-								<hr className="w-full border-t border-white" />
-							</div>
-							<div>
-								<h5 className={`font-semibold tracking-[.5px] text-[1.5rem] mb-[1rem]`}>Fast access, zero friction.</h5>
-								<p className="text-[1rem] mb-4 leading-[1.4] text-white">Our platform uses our proprietary credit scoring algorithm and AI to assess users in real time and disburse funds, often in under 24 hours. That’s why underserved workers keep coming back.</p>
-							</div>
-							<div>
-								<hr className="w-full border-t border-white" />
-							</div>
-							<div>
-								<h5 className={`font-semibold tracking-[.5px] text-[1.5rem] mb-[1rem]`}>Fast access, zero friction.</h5>
-								<p className="text-[1rem] mb-4 leading-[1.4] text-white">Our platform uses our proprietary credit scoring algorithm and AI to assess users in real time and disburse funds, often in under 24 hours. That’s why underserved workers keep coming back.</p>
-							</div>
+				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+					{/* Left Content */}
+					<div>
+						<p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-300/70 mb-4">How It Works</p>
+						<h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+							Embedded. Automated.<br />
+							<span className="text-teal-400">No standalone app.</span>
+						</h2>
+						<p className="text-teal-100/70 text-lg leading-relaxed mb-8">
+							Platforms where people earn in Nigeria and Kenya can embed solar financing directly into their product. Fig handles underwriting via <strong className="text-teal-200">PesaScore</strong> and collects repayments automatically from platform payouts — regulated through our Microfinance Bank (Nigeria) and SACCO (Kenya) lending partners.
+						</p>
+						<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-400/10 border border-teal-400/20 text-sm text-teal-300 font-medium">
+							<span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
+							Live with Selar in pilot
 						</div>
 					</div>
-				</div>
 
-				<div className="grid md:grid-cols-2">
-					<div></div>
-					<div className="space-y-4"></div>
+					{/* Right Checklist */}
+					<div className="space-y-6 bg-[#121619] p-8 md:p-10 rounded-[2rem] border border-white/10 shadow-2xl">
+						{steps.map((step, idx) => (
+							<div key={idx} className="flex gap-4 pb-6 border-b border-white/[0.06] last:border-0 last:pb-0">
+								<div className="flex-shrink-0 mt-0.5">
+									<CheckCircle2 className="w-5 h-5 text-teal-400" />
+								</div>
+								<div>
+									<h3 className="text-base font-bold text-white mb-1.5">
+										{step.title}
+									</h3>
+									<p className="text-slate-400 leading-relaxed text-sm">
+										{step.desc}
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
-
-				{/* <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-[5rem]">
-					{CardDetails.map(card => (
-						<motion.div
-							variants={variants}
-							initial="initial"
-							whileInView="animate"
-							whileHover={{
-								scale: 1.02,
-							}}
-							custom={card.id}
-							viewport={{
-								once: true,
-								amount: 0.25,
-							}}
-							key={card.id}
-							className="w-full mb-5 md:w-full h-[400px] md:col-span-1 mx-auto text-center rounded-[20px]   ">
-							<FlipCard card={card} />
-						</motion.div>
-					))}
-				</div> */}
 			</Container>
 		</section>
 	)
